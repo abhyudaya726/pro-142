@@ -13,6 +13,17 @@ unliked_articals = []
 
 app = Flask(__name__)
 
+@app.route("/get-data")
+def get_movie():
+    movie_data = {
+        "title": all_movies[2]
+        "rating": all_movies[21]
+    }
+    return jsonify({
+        "data": movie_data,
+        "status": "success"
+    })
+
 @app.route("/like")
 def like_artical():
     artical = all_articals[0]
